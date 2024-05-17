@@ -1,5 +1,8 @@
 # Microsoft-Developers-AI-Learning-Hackathon
+
 organized by DEVPOST
+
+## Setup Environment
 
 ```bash
 # python version -> Python 3.10.13
