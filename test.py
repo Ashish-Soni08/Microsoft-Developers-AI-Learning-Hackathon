@@ -3,7 +3,7 @@ from constants import API_KEY, ENDPOINT
 from openai import AzureOpenAI
 
 API_VERSION = "2024-02-01"
-MODEL_NAME = "gpt-35-turbo"
+MODEL_NAME = "gpt-4-32k"
 
 client = AzureOpenAI(
     azure_endpoint=ENDPOINT,
@@ -18,7 +18,7 @@ MESSAGES = [
         "role": "assistant",
         "content": "The Los Angeles Dodgers won the World Series in 2020.",
     },
-    {"role": "user", "content": "Where was it played?"},
+    {"role": "user", "content": "Write a Poem"},
 ]
 
 completion = client.chat.completions.create(
