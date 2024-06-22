@@ -18,3 +18,7 @@ python -m venv microsoft-ai
 # activate the virtual enivironment
 source microsoft-ai/bin/activate
 ```
+
+
+
+
