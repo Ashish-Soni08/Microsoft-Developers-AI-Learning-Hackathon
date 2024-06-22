@@ -1,9 +1,12 @@
-from constants import API_KEY, ENDPOINT
+import sys
 
 from openai import AzureOpenAI
 
-API_VERSION = "2024-02-01"
-MODEL_NAME = "gpt-4-32k"
+from constants import (API_KEY,
+                       API_VERSION,
+                       ENDPOINT,
+                       EMBEDDING_MODEL,
+                       LLM)
 
 client = AzureOpenAI(
     azure_endpoint=ENDPOINT,
@@ -21,9 +24,25 @@ MESSAGES = [
     {"role": "user", "content": "Write a Poem"},
 ]
 
-completion = client.chat.completions.create(
-    model=MODEL_NAME,
-    messages=MESSAGES,
+
+try:
+    response = client.chat.completions.create(
+        model=LLM,
+        messages=MESSAGES,
+        stream=True
+    )
+
+    print(response.model_dump_json(indent=2))
+
+except Exception as error:
+    print(error.response.text)
+    # sys.exit()
+
+embeddings = client.embeddings.create(
+    input = "Hey I am Ashish",
+    model= EMBEDDING_MODEL
 )
 
-print(completion.model_dump_json(indent=2))
+
+
+    
