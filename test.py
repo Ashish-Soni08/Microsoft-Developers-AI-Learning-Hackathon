@@ -8,7 +8,7 @@ from constants import (API_KEY,
                        EMBEDDING_MODEL,
                        LLM)
 
-client = AzureOpenAI(
+llm_client = AzureOpenAI(
     azure_endpoint=ENDPOINT,
     api_key=API_KEY,
     api_version=API_VERSION,
@@ -26,19 +26,19 @@ MESSAGES = [
 
 
 try:
-    response = client.chat.completions.create(
+    llm_response = llm_client.chat.completions.create(
         model=LLM,
         messages=MESSAGES,
         stream=True
     )
 
-    print(response.model_dump_json(indent=2))
+    print(llm_response.model_dump_json(indent=2))
 
 except Exception as error:
     print(error.response.text)
     # sys.exit()
 
-embeddings = client.embeddings.create(
+embeddings = llm_client.embeddings.create(
     input = "Hey I am Ashish",
     model= EMBEDDING_MODEL
 )
