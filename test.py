@@ -1,10 +1,14 @@
 import sys
 
-from openai import AzureOpenAI
+from langchain_community.vectorstores import AzureCosmosDBVectorSearch
+from langchain_openai import (AzureChatOpenAI, AzureOpenAIEmbeddings)
 
-from constants import (API_KEY,
-                       API_VERSION,
-                       ENDPOINT,
+from constants import (AZURE_OPENAI_ENDPOINT,
+                       AZURE_OPENAI_API_KEY,
+                       AZURE_OPENAI_API_VERSION,
+                       AZURE_OPENAI_CHAT_DEPLOYMENT_NAME,
+                       AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT_NAME,
+                       DB_CONNECTION,
                        EMBEDDING_MODEL,
                        LLM)
 
