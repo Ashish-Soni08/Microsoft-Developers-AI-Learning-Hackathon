@@ -2,7 +2,19 @@
 
 organized by DEVPOST
 
-## Setup Environment
+## THE DECOLONIZED MIND
+
+![The_Decolonized_Mind](/images/decolonized_mind.png)
+
+## Technical Implementation Details
+
+![GPT-4-32K](/images/model_info.PNG)
+
+### Architecture
+
+![Architecture](/images/architecture.jpg)
+
+### Environment Setup
 
 ```bash
 # python version -> Python 3.10.13
